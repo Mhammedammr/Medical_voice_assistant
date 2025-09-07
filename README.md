@@ -1,14 +1,13 @@
 # AI Medical Voice Assistant
 
-This project is an AI chat and voice assistant designed to help healthcare professionals by calculating medical scores and providing contextual information. The assistant uses advanced AI technologies to process data from PDFs and URLs, allowing for a conversational and informed user experience.
+This project is an AI chat and voice assistant designed to help healthcare professionals by providing medical information and calculating medical scores. The assistant uses advanced AI models and prompt engineering to deliver accurate and contextually relevant responses.
 
 ### Key Features
 
 * **Voice Interaction:** Uses the OpenAI **Whisper** model for accurate speech-to-text conversion.
-* **Contextual Responses:** Employs **LLM RAG** (Retrieval Augmented Generation) to retrieve information from various documents and provide accurate answers.
-* **Vector Database:** Uses **Chroma Database** to store and manage document embeddings, enabling efficient semantic search.
+* **Intelligent Responses:** Employs **prompt engineering** with state-of-the-art Large Language Models to generate conversational and informed answers.
+* **Serverless LLMs:** Integrates with **DeepSeek-V3** and **Llama-4-Marvek** from **Fireworks AI** serverless services for powerful and scalable language processing.
 * **Medical Score Calculation:** Supports **Function Calling** to compute specific medical scores based on user requests.
-* **Flexible LLM Integration:** Can be powered by either an open-source model like **MedLlama2** using **Ollama** for local processing or a **GPT** model with an OpenAI API key for cloud-based services.
 
 ### Getting Started
 
