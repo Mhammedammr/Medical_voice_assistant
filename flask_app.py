@@ -60,6 +60,7 @@ def analyze():
         return jsonify({"error": "No audio file provided"}), 400
     
     audio_file = request.files['audio']
+    logger.info(f"audio_file: {audio_file}" )
     if audio_file.filename == '':
         logger.error("No file selected")
         return jsonify({"error": "No file selected"}), 400
@@ -68,7 +69,7 @@ def analyze():
     language = request.form.get('language', 'ar')
     features = request.form.get('features', None)
     
-    logger.info(f"File: {audio_file.filename}, Content Type: {audio_file.content_type}")
+    logger.info(f"File_org:, {request.files['audio']} File: {audio_file.filename}, Content Type: {audio_file.content_type}")
     logger.info(f"Parameters: language={language}")
     
     # Save the uploaded file
@@ -91,7 +92,6 @@ def analyze():
             for step_name, payload in stream_pipeline(
                 file_path=file_path,
                 language=language,
-                api_key=Config.FIREWORKS_API_KEY,
                 features=features
             ):
                 yield f"data: {json.dumps({'step': step_name, 'data': payload})}\n\n"
